@@ -23,7 +23,7 @@ stages:
     - task: Docker@2
       displayName: Build an container
       inputs:
-        command: run
+        command: docker run -dt --name cont1 -p 80:80 ubuntu-latest
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
